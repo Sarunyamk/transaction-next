@@ -1,12 +1,14 @@
-import { Metadata } from 'next'
-import React from 'react'
+import TransactionList from '@/components/transaction/transaction-list';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Transaction Page',
-}
+  title: 'Transaction'
+};
 
-export default function TransactionPage() {
+export default async function TransactionPage() {
   return (
-    <div>TransactionPage</div>
-  )
+    <div className="flex flex-col gap-4">
+      <TransactionList />
+    </div>
+  );
 }
