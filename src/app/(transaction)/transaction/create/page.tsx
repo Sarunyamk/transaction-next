@@ -1,12 +1,30 @@
-import { Metadata } from 'next'
-import React from 'react'
+
+import TransactionFormLoader from '@/components/transaction/transaction-form-wrapper';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Create Transaction',
-}
+  title: 'Create Transaction'
+};
 
 export default function CreateTransactionPage() {
   return (
-    <div>CreateTransactionPage</div>
-  )
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-2xl">Create transaction</CardTitle>
+        <CardDescription>
+          Fill out the form to create a new transaction
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <TransactionFormLoader mode="create" />
+      </CardContent>
+    </Card>
+  );
 }
